@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-// import CardScratchOff from 'react-card-scratch-off';
-// import CardScratchOff from './CardScratchOff';
 import styled from 'styled-components';
 import { randomIndexFromArray } from '../utils/helpers';
 import Mask from '../images/mask.jpg';
