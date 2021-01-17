@@ -11,9 +11,20 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    padding: 1rem 0;
+    padding:  0 0 1rem;
     background: #fff;
   }
+
+  .scratch-off-container {
+    position: relative;
+    width: 50vw;
+    height: 100%;
+  }
+
+  .scratch-off-canvas {
+    position: absolute;
+  }
 `;
+
 
 export default GlobalStyles;
