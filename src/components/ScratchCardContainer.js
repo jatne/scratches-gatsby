@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import ReactCardScratchOff from 'react-card-scratch-off';
+// import CardScratchOff from 'react-card-scratch-off';
+// import CardScratchOff from './CardScratchOff';
 import styled from 'styled-components';
 import { randomIndexFromArray } from '../utils/helpers';
 import Mask from '../images/mask.jpg';
+import loadable from '@loadable/component';
+
+const CardScratchOff = loadable(() => import('react-card-scratch-off'));
 
 const ScratchCardContainerStyled = styled.div`
   position: relative;
@@ -38,7 +42,7 @@ const ScratchCardContainer = ({ background, groups }) => {
 
     return (
       <ScratchCardContainerStyled>
-        <ReactCardScratchOff
+        <CardScratchOff
           allowClickToScratch={true}
           containerStyleClassname="scratch-off-container"
           canvasStyleClassName="scratch-off-canvas"
@@ -51,7 +55,7 @@ const ScratchCardContainer = ({ background, groups }) => {
           }}
         >
           <ResultStyled style={{backgroundSize: 'cover', backgroundImage: `url(${result})`}} />
-        </ReactCardScratchOff>
+        </CardScratchOff>
       </ScratchCardContainerStyled>
 
     )
