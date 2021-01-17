@@ -16,10 +16,10 @@ export default function Layout({ children }) {
       <GlobalStyles />
       <Structure />
       <Animations/>
-      <Header />
       <MainStyle>
         {children}
       </MainStyle>
+      <Header />
     </>
   );
 }

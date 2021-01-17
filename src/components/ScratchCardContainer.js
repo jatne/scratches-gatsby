@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ScratchCard from 'scratchcard-for-react';
+import ReactCardScratchOff from 'react-card-scratch-off';
 import styled from 'styled-components';
 import { randomIndexFromArray } from '../utils/helpers';
 import Mask from '../images/mask.jpg';
@@ -8,6 +8,7 @@ const ScratchCardContainerStyled = styled.div`
   position: relative;
   display: flex;
   width: 100%;
+  height: 100%;
   justify-content: center;
 `;
 
@@ -37,31 +38,30 @@ const ScratchCardContainer = ({ background, groups }) => {
 
     return (
       <ScratchCardContainerStyled>
-        <ScratchCard
-          maskImageSrc ={ mask }
-          width = '1000'
-          height= '400'
-          radius = {60}
-          fadeout = '1000'
-          percent={60}
-          onTouched={() => {
-          }}
-          onFinish={() => {
-            setTimeout(() => increaseCount(), 3000)
+        <ReactCardScratchOff
+          allowClickToScratch={true}
+          containerStyleClassname="scratch-off-container"
+          canvasStyleClassName="scratch-off-canvas"
+          coverSrc={mask}
+          finishPercent={60}
+          onScratchFinish={() => {
+            setTimeout(() => {
+              increaseCount()
+            }, 3000);
           }}
         >
           <ResultStyled style={{backgroundSize: 'cover', backgroundImage: `url(${result})`}} />
-        </ScratchCard>
+        </ReactCardScratchOff>
       </ScratchCardContainerStyled>
 
     )
   }
 
   return (
-    <>
+    <div>
       <Scratchie />
       <button type="button" onClick={increaseCount}>New</button>
-    </>
+    </div>
   )
 }
 

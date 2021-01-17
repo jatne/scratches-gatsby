@@ -1,22 +1,30 @@
 import React from 'react';
-// import Card from '../components/Card';
-import ReactScratch from 'react-scratch';
+import ReactCardScratchOff from 'react-card-scratch-off';
 import Mask from '../images/mask.jpg';
+import Result from '../images/example.jpg';
+import styled from 'styled-components';
+
+const ResultStyle = styled.div`
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+`;
 
 const Temp = () => {
   console.log(Mask);
   return (
     <>
-      <h3>temp</h3>
-      {/* <Card
-        containerWidth={300}
-        mask={Mask}
+      <ReactCardScratchOff
+        allowClickToScratch={true}
+        containerStyleClassname="scratch-off-container"
+        canvasStyleClassName="scratch-off-canvas"
+        coverSrc={Mask}
       >
-        MY RESULT
-      </Card> */}
-      <ReactScratch baseBg={`url(${Mask})`} coverBg="#dddddd" width="100">
-
-      </ReactScratch>
+        <ResultStyle style={{backgroundImage: `url(${Result})`}}>xddd</ResultStyle>
+      </ReactCardScratchOff>
     </>
   );
 }
