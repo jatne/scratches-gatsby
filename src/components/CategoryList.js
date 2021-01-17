@@ -5,10 +5,12 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 const CategoryListBaseStyle = styled.div`
   --col: 100%;
-  --row: 15rem;
+  --row: 15vw;
 
+  display: grid;
   width: 100%;
   column-gap: 1rem;
+  grid-auto-rows: var(--row);
 
   @media screen and (min-width: 600px) {
     --col: 20rem;
@@ -16,20 +18,17 @@ const CategoryListBaseStyle = styled.div`
 `;
 
 const CategoryListDefaultStyle = styled(CategoryListBaseStyle)`
-  display: grid;
   row-gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(var(--col), 1fr));
-  grid-auto-rows: var(--row);
 `;
 
 const CategoryListInlineStyle = styled(CategoryListBaseStyle)`
-  display: flex;
-  flex-wrap: nowrap;
+  grid-auto-flow: column;
+  grid-auto-columns: 25vw;
   overflow-y: auto;
 
-  .category__single {
-    flex: 0 0 300px;
-    min-height: var(--row);
+  a {
+    font-size: 1.125rem;
   }
 `;
 

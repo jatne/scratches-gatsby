@@ -11,13 +11,13 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    padding:  0 0 1rem;
+    padding: 0 0 1rem;
     background: #fff;
   }
 
   .scratch-off-container {
     position: relative;
-    width: 50vw;
+    width: 90vw;
     height: 100%;
   }
 
