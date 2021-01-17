@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { randomIndexFromArray } from '../utils/helpers';
 import Mask from '../images/mask.jpg';
 import loadable from '@loadable/component';
+import CustomBrush from '../images/custom-brush.png';
 
 const CardScratchOff = loadable(() => import('react-card-scratch-off'));
 
@@ -42,10 +43,12 @@ const ScratchCardContainer = ({ background, groups }) => {
       <ScratchCardContainerStyled>
         <CardScratchOff
           allowClickToScratch={true}
+          maxTimesClickToScratch={0}
           containerStyleClassname="scratch-off-container"
           canvasStyleClassName="scratch-off-canvas"
           coverSrc={mask}
-          finishPercent={60}
+          finishPercent={70}
+          brushesSrc={CustomBrush}
           onScratchFinish={() => {
             setTimeout(() => {
               increaseCount()
